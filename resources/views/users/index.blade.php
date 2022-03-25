@@ -30,6 +30,7 @@
                                                 <th>Nombre</th>
                                                 <th>Correo</th>
                                                 <th>Username</th>
+                                                <th>Estado</th>
                                                 <th>Created_at</th>
                                                 <th class="text-right">Acciones</th>
                                             </thead>
@@ -40,14 +41,19 @@
                                                     <td>{{$user -> name}}</td>
                                                     <td>{{$user -> email}}</td>
                                                     <td>{{$user -> username}}</td>
+                                                    <td>
+									                    @if($user->estado==1)
+									                       <button type="button" class="btn btn-sm btn-success">Activo</button>
+									                    @else
+									                        <button type="button" class="btn btn-sm btn-danger">Inactivo</button>
+									                    @endif
+								                    </td>
                                                     <td>{{$user -> created_at}}</td>
                                                     <td class="td-actions text-right" >
                                                         <a href="{{ route('users.show', $user->id)}}" class="btn btn-info"> <i class="material-icons">person</i></a>
                                                         <a href="{{ route('users.edit', $user->id)}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
 
-                                                        <button class="btb btn-outline-danger" type="button">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
+                                                       
                                                     </td>
                                                 </tr>   
                                                 @endforeach                 

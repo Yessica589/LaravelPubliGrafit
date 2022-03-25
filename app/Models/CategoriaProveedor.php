@@ -11,5 +11,6 @@ class CategoriaProveedor extends Model
 
     protected $fillable = [
         'nombrecategoria',
+        'estado'
     ];
 }

@@ -37,27 +37,5 @@ class ControlInsumoController extends Controller
         $controlinsumo->update($data);
         return redirect()->route('controlinsumo.index')->with('success', 'Insumo actualizado correctamente');
     }
-
-    public function listar(Request $request){
-        //consulto todos los productos y el nombre de la categoria a través de un join
-        $controlinsumos = ControlInsumo::all();
-
-        //Retornarmos el datatable
-        return DataTables::of($controlinsumos)
-        ->editColumn("estado", function($controlinsumo){
-            return $controlinsumo->estado==1 ?"Activo" : "Inactivo";
-        })
-        //Adicionamos una columna con la opción de Inactivar o Activar para colocar dos botones
-        ->addColumn('cambiar',function($controlinsumo){
-            if ($controlinsumo->estado==1){ 
-                return '<a class="btn btn-danger bt-sm" href="/controlinsumo/cambiar/estado/'.$controlinsumo->id.'/0">Inactivar</a>';
-            }else {
-                return '<a class="btn btn-success bt-sm" href="/controlinsumo/cambiar/estado/'.$controlinsumo->id.'/1">Activar</a>';
-            }
-        })
-        //utilizamos rawcolumns para representar el contenido html
-        ->rawcolumns(['cambiar'])
-        ->make(true);
-    }
 }
 

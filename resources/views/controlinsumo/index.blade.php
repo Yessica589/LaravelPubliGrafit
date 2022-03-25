@@ -40,14 +40,18 @@
                                                     <td>{{$controlinsumo -> nombreinsumo}}</td>
                                                     <td>{{$controlinsumo -> cantidadinsumo}}</td>
                                                     <td>{{$controlinsumo -> precioinsumo}}</td>
-                                                    <td>{{$controlinsumo -> estado}}</td>
+                                                    <td>
+									                    @if($controlinsumo->estado==1)
+									                       <button type="button" class="btn btn-sm btn-success">Activo</button>
+									                    @else
+									                        <button type="button" class="btn btn-sm btn-danger">Inactivo</button>
+									                    @endif
+								                    </td>
                                                     <td>{{$controlinsumo -> created_at}}</td>
                                                     <td class="td-actions text-right" >
                                                         <a href="{{ route('controlinsumo.edit', $controlinsumo->id)}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
 
-                                                        <button class="btb btn-outline-danger" type="button">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
+                                                      
                                                     </td>
                                                 </tr>   
                                                 @endforeach                 

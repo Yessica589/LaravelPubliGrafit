@@ -50,6 +50,12 @@
                                    <input type="text" class="form-control" name="estado" value="{{ $cliente->estado}}" autofocus>
                                 </div>
                             </div>
+                            <!-- <div class="row">
+                                <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+                                <div class="col-sm-7">
+                                   <input type="checkbox" class="form-control" name="estado" value="{{ $cliente->estado}}" autofocus>
+                                </div>
+                            </div> -->
                         </div>
                          <!--Footer-->
                         <div class="card-footer ml-auto mr-auto">

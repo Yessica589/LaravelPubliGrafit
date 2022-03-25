@@ -26,7 +26,15 @@
                                                     {{ $cliente->celular}} <br>
                                                     {{ $cliente->email}} <br>
                                                     {{ $cliente->direccion}} <br>
-                                                    {{ $cliente->estado}} <br>
+                                                    <?php
+                                                        $estado = $cliente->estado;
+                                                        if( $estado == 0){
+                                                           echo 'Inactivo';
+                                                        }
+                                                        else {
+                                                            echo 'Activo';
+                                                        }
+                                                    ?><br>
                                                     {{ $cliente->created_at}}<br>
                                                 </p>
                                             </div>

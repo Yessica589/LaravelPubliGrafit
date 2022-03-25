@@ -27,6 +27,7 @@
                                             <thead class="text-primary">
                                                 <th>Id</th>
                                                 <th>Nombre de la categoría</th>
+                                                <th>Estado</th>
                                                 <th>Created_at</th>
                                                 <th class="text-right">Acciones</th>
                                             </thead>
@@ -35,13 +36,17 @@
                                                 <tr>
                                                     <td>{{$categoriaproveedor -> id}}</td>
                                                     <td>{{$categoriaproveedor -> nombrecategoria}}</td>
+                                                    <td>
+									                    @if($categoriaproveedor->estado==1)
+									                       <button type="button" class="btn btn-sm btn-success">Activo</button>
+									                    @else
+									                        <button type="button" class="btn btn-sm btn-danger">Inactivo</button>
+									                    @endif
+								                    </td>
                                                     <td>{{$categoriaproveedor -> created_at}}</td>
                                                     <td class="td-actions text-right" >
                                                         <a href="{{ route('categoriaproveedor.edit', $categoriaproveedor->id)}}" class="btn btn-warning"> <i class="material-icons">edit</i></a>
 
-                                                        <button class="btb btn-outline-danger" type="button">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
                                                     </td>
                                                 </tr>   
                                                 @endforeach                 

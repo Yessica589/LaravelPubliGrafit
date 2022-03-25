@@ -57,15 +57,7 @@
                                      @endif
                                 </div>
                             </div>
-                            <div class="row">
-                                <label for="estado" class="col-sm-2 col-form-label">Estado</label>
-                                <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="estado" placeholder="Ingrese el estado del cliente " value="{{ old('estado')}}" autofocus>
-                                    @if($errors-> has ('estado'))
-                                    <span class="error text-danger" for="input-estado">{{ $errors->first('estado')}}</span>
-                                     @endif
-                                </div>
-                            </div>
+                            
                         </div>
                         <!--Footer-->
                         <div class="card-footer ml-auto mr-auto">

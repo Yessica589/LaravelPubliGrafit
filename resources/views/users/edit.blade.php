@@ -35,15 +35,23 @@
                                 <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
                                 <div class="col-sm-7">
                                    <input type="password" class="form-control" name="password" placeholder="Ingrese la contraseña solo en caso de modificarla" >
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+                                <div class="col-sm-7">
+                                   <input type="text" class="form-control" name="estado" value="{{ $user->estado}}" autofocus>
+                                </div>
                             </div>
                         </div>
+                         <!--Footer-->
+                         <div class="card-footer ml-auto mr-auto">
+                            <button type="submit" class="btn btn-danger">Actualizar</button>
+                        </div>
+                         <!--End footer-->
                     </div>
-                    <!--Footer-->
-                    <div class="card-footer ml-auto mr-auto">
-                        <button type="submit" class="btn btn-danger">Actualizar</button>
-                    </div>
-                    <!--End footer-->
-                   </div>
+                    
+
                 </form>
             </div>
         </div>

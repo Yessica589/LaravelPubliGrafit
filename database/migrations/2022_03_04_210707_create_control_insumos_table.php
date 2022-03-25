@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombreinsumo');
             $table->string('cantidadinsumo');
             $table->string('precioinsumo');
-            $table->string('estado');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }

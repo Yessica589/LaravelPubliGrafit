@@ -58,6 +58,10 @@ class FortifyServiceProvider extends ServiceProvider
             return view (view:'auth.verify');
         });
 
+        Fortify::resetPasswordView(function ($request) {
+            return view('auth.reset-password', ['request' => $request]);
+        });
+
         Fortify::authenticateUsing(function (Request $request) {
             $user = User::where('email', $request->username)
                 ->orWhere('username', $request->username)
@@ -84,4 +88,5 @@ class FortifyServiceProvider extends ServiceProvider
 
 
     }
+    
 }

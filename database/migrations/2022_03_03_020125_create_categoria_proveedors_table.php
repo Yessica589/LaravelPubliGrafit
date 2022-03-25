@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('categoria_proveedors', function (Blueprint $table) {
             $table->id();
             $table->string('nombrecategoria');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }

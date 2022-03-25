@@ -24,6 +24,15 @@
                                                 <p class="description">
                                                     {{ $user->username}} <br>
                                                     {{ $user->email}} <br>
+                                                    <?php
+                                                        $estado = $user->estado;
+                                                        if( $estado == 0){
+                                                           echo 'Inactivo';
+                                                        }
+                                                        else {
+                                                            echo 'Activo';
+                                                        }
+                                                    ?> <br>
                                                     {{ $user->created_at}}<br>
                                                 </p>
                                             </div>

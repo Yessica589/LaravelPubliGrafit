@@ -20,7 +20,7 @@
         </button>
         </div>
       </form>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav" >
         <li class="nav-item">
           <a class="nav-link" href="{{ route('home') }}">
             <i class="material-icons">dashboard</i>
@@ -29,7 +29,7 @@
             </p>
           </a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" >
           <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">notifications</i>
             <span class="notification">5</span>
@@ -52,7 +52,7 @@
               {{ __('Account') }}
             </p>
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile" >
             <a class="dropdown-item" href="#">{{ __('Profile') }}</a>
             <a class="dropdown-item" href="#">{{ __('Settings') }}</a>
             <div class="dropdown-divider"></div>

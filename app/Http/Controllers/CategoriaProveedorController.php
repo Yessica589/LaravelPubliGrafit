@@ -33,8 +33,8 @@ class CategoriaProveedorController extends Controller
     public function update(Request $request, CategoriaProveedor $categoriaproveedor)
     {
         //$user=User::findOrFail($id);
-        $data=$request->only( 'nombrecategoria');
-        $categoriaproveedor->update($data);
+        $data=$request->except('_token', '_method');
+        $categoriaproveedor->update($data);        
         return redirect()->route('categoriaproveedor.index')->with('success', 'Categoría proveedor actualizada correctamente');
     }
 }

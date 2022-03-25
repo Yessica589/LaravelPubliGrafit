@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('celular');
             $table->string('email');
             $table->string('direccion');
-            $table->string('estado');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
     }
