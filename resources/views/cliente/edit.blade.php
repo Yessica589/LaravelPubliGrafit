@@ -2,7 +2,7 @@
 @section('content')
 <div class="content">
     <div class="container-fluid">
-    <!--Inicio-->
+    <!--Inicio Repositorio-->
         <div class="row">
             <div class="col-md-12">
                 <form action="{{ route('cliente.update', $cliente->id)}}" method="post" class="form-horizontal">
