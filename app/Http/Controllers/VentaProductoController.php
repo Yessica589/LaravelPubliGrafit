@@ -11,11 +11,34 @@ use DB;
 
 class VentaProductoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $clientes = Cliente::all();
+        $id = $request -> input("id");
+        $productos = [];
+        if ($id != null) {
+            $productos = ProductoTerminado:: select("productos.*", "producto_terminados.cantidadproducto as cantidad_c")
+            -> join("producto_terminados", "idproducto", "=", "producto_terminados")
+            -> get();
+        }
+        
+        $clientes = DB::select('SELECT v.id, idcliente, preciototal, fechaventa, v.estado, c.nombrecompleto, v.created_at FROM ventas as v JOIN clientes as c WHERE v.idcliente = c.id');
+        return view("ventaproducto.index", compact("clientes", "productos", ));
+    }
+
+    public function showProducto($id)
+    {        
+        if ($id != null) {
+            $productos =DB::select('SELECT vp.idproducto, vp.cantidadproducto, pt.nombreproducto, vp.created_at FROM venta_productos as vp JOIN producto_terminados as pt WHERE idventa = ? and vp.idproducto = pt.id', [$id]);
+        }
+        
+        /* return response()->json($insumos); */
+        return view("ventaproducto.show", compact("productos", ));
+    }
+
+    public function create(){
         $productoterminados = ProductoTerminado::all();
-        return view("ventaproducto.index", compact("clientes", "productoterminados" ));
+        $clientes = Cliente::all();
+        return view('ventaproducto.create', compact("productoterminados", "clientes"));
     }
     
     public function store(Request $request)

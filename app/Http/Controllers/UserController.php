@@ -23,12 +23,19 @@ class UserController extends Controller
 
     {
         $request->validate(rules: [
-            'name'=>'required|min:3|max:5',
+            'name'=>'required|min:3|max:10',
+            'apellido'=>'required|min:3|max:10',
             'username'=>'required',
+            'tipodocumento'=>'required|min:2|max:5',
+            'ndocumento'=>'required',
+            'telefono'=>'required',
+            'celular'=>'required',
+            'direccion'=>'required|min:3|max:40',
+            'fechanacimiento'=>'required',
             'email'=>'required|email|unique:users',
             'password'=>'required'
         ]);
-        $user = User::create($request->only('name', 'username', 'email')
+        $user = User::create($request->only('name', 'apellido', 'username', 'tipodocumento', 'ndocumento', 'telefono', 'celular', 'direccion', 'fechanacimiento', 'email')
             + [
                 'password' => bcrypt($request->input('password')),
             ]);
@@ -50,7 +57,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //$user=User::findOrFail($id);
-        $data=$request->only( 'name', 'username', 'email', 'estado');
+        $data=$request->only( 'name', 'apellido', 'username', 'tipodocumento', 'ndocumento', 'telefono', 'celular', 'direccion', 'fechanacimiento', 'email', 'estado');
         $password=$request->input(key: 'password');
         if($password)
             $data['password']=bcrypt($password);

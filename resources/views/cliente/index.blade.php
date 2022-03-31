@@ -23,7 +23,7 @@
                                         </div>
                                     </div>
                                     <div class="table-resposive">
-                                        <table class="table">
+                                        <table class="table" id="cliente">
                                             <thead class="text-primary">
                                                 <th>Id</th>
                                                 <th>Nombre Completo</th>
@@ -71,4 +71,11 @@
             </div>
         </div>
     </div>
+@endsection
+@section("script")
+<script>
+$(document).ready( function () {
+    $('#cliente').DataTable();
+} );
+</script>
 @endsection

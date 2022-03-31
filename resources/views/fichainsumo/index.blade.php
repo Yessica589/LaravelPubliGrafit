@@ -31,7 +31,7 @@
                                     </div>                                   
                                 </div>
                                 <div class="table-resposive">
-                                    <table class="table">   
+                                    <table class="table" id="fichainsumo">   
                                         <thead class="text-primary">
                                             <tr>
                                                 <th>Id</th>
@@ -39,6 +39,7 @@
                                                 <th>Precio</th>
                                                 <th>Insumos</th>
                                                 <th>Created_at</th>
+                                                <th>Estado</th>
                                                 <th class="text-right">Acciones</th>
                                             </tr>
                                         </thead>
@@ -53,7 +54,13 @@
                                                         
                                                     </td>
                                                     <td>{{$value -> created_at}}</td>
-                                                    
+                                                     <td>
+									                    @if($value->estado==1)
+									                       <button type="button" class="btn btn-sm btn-success">Activo</button>
+									                    @else
+									                        <button type="button" class="btn btn-sm btn-danger">Inactivo</button>
+									                    @endif
+								                    </td>
                                                     <td class="td-actions text-right" >
                                                         <a href="#" class="btn btn-warning"> <i class="material-icons">edit</i></a>
                                                     </td>
@@ -71,4 +78,10 @@
     </div>
 </div>
 @endsection
-
+@section("script")
+<script>
+$(document).ready( function () {
+    $('#fichainsumo').DataTable();
+} );
+</script>
+@endsection

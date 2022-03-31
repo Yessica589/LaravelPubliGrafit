@@ -96,7 +96,7 @@
                                 </div> 
                             </div>
                             <br><br>
-                            <table class="table">
+                            <table class="table" id="comprainsumo">
                                 <thead class="text-primary">
                                     <tr>
                                         <th>Nombre insumo</th>
@@ -157,5 +157,12 @@
             alert("Se debe ingresar una cantidad o precio valido");
         }
     }
+</script>
+@endsection
+@section("script")
+<script>
+$(document).ready( function () {
+    $('#comprainsumo').DataTable();
+} );
 </script>
 @endsection

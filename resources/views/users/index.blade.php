@@ -24,12 +24,13 @@
                                         </div>
                                     </div>
                                     <div class="table-resposive">
-                                        <table class="table">
+                                        <table class="table" id="users">
                                             <thead class="text-primary">
                                                 <th>Id</th>
                                                 <th>Nombre</th>
-                                                <th>Correo</th>
+                                                <th>Apellido</th>
                                                 <th>Username</th>
+                                                <th>Correo</th>
                                                 <th>Estado</th>
                                                 <th>Created_at</th>
                                                 <th class="text-right">Acciones</th>
@@ -39,8 +40,9 @@
                                                 <tr>
                                                     <td>{{$user -> id}}</td>
                                                     <td>{{$user -> name}}</td>
-                                                    <td>{{$user -> email}}</td>
+                                                    <td>{{$user -> apellido}}</td>
                                                     <td>{{$user -> username}}</td>
+                                                    <td>{{$user -> email}}</td>
                                                     <td>
 									                    @if($user->estado==1)
 									                       <button type="button" class="btn btn-sm btn-success">Activo</button>
@@ -71,4 +73,11 @@
             </div>
         </div>
     </div>
+@endsection
+@section("script")
+<script>
+$(document).ready( function () {
+    $('#users').DataTable();
+} );
+</script>
 @endsection

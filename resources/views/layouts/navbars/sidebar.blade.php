@@ -72,10 +72,10 @@
               </a>
             </li>
             <li class="nav-item{{ $activePage == 'fichainsumo' ? ' active' : '' }}">
-               <a class="nav-link" href="{{ route('fichainsumo.index')}}">
-               <i class="material-icons">description</i>
-                <p>Ficha Técnica</p>
-                </a>
+              <a class="nav-link" href="{{ route('fichainsumo.index')}}">
+              <i class="material-icons">description</i>
+                 <p>Ficha Técnica </p>
+              </a>
             </li>
           </ul>
         </div>
@@ -89,6 +89,12 @@
         </a>
         <div class="collapse show" id="laravel2">
           <ul class="nav">
+            <li class="nav-item{{ $activePage == 'ventaproducto' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('ventaproducto.index')}}">
+              <i class="material-icons">receipt</i>
+                <p>Gestión de Ventas </p>
+              </a>
+            </li>
             <li class="nav-item{{ $activePage == 'cliente' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('cliente.index')}}">
               <i class="material-icons">group_add</i>
@@ -98,9 +104,6 @@
           </ul>
         </div>
       </li>
-      
-     
     </ul>
   </div>
-  
 </div>

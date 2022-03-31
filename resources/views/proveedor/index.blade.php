@@ -23,7 +23,7 @@
                                         </div>
                                     </div>
                                     <div class="table-resposive">
-                                        <table class="table">
+                                        <table class="table" id="proveedor">
                                             <thead class="text-primary">
                                                 <th>Id</th>
                                                 <th>Nombre del proveedor</th>
@@ -72,4 +72,11 @@
             </div>
         </div>
     </div>
+@endsection
+@section("script")
+<script>
+$(document).ready( function () {
+    $('#proveedor').DataTable();
+} );
+</script>
 @endsection

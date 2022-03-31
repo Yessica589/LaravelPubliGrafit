@@ -22,8 +22,15 @@
                                                     <h5 class="title-mx-3">{{ $user->name }}</h5>
                                                 </a>
                                                 <p class="description">
+                                                    {{ $user->apellido}} <br>
                                                     {{ $user->username}} <br>
+                                                    {{ $user->tipodocumento}} <br>
+                                                    {{ $user->ndocumento}} <br>
+                                                    {{ $user->telefono}} <br>
+                                                    {{ $user->celular}} <br>
                                                     {{ $user->email}} <br>
+                                                    {{ $user->direccion}} <br>
+                                                    {{ $user->fehanacimiento}}
                                                     <?php
                                                         $estado = $user->estado;
                                                         if( $estado == 0){

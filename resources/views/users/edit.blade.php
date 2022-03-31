@@ -20,9 +20,39 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+                                <div class="col-sm-7">
+                                   <input type="text" class="form-control" name="apellido" value="{{ $user->apellido}}" autofocus>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <label for="username" class="col-sm-2 col-form-label ">Nombre de usuario</label>
                                 <div class="col-sm-7">
                                    <input type="text" class="form-control " name="username" value="{{ $user->username}}" >
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="tipodocumento" class="col-sm-2 col-form-label">Tipo Documento</label>
+                                <div class="col-sm-7">
+                                   <input type="text" class="form-control" name="tipodocumento" value="{{ $user->tipodocumento}}" autofocus>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="ndocumento" class="col-sm-2 col-form-label">Número de Documento</label>
+                                <div class="col-sm-7">
+                                   <input type="number" class="form-control" name="ndocumento" value="{{ $user->ndocumento}}" autofocus>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="telefono" class="col-sm-2 col-form-label">Télefono</label>
+                                <div class="col-sm-7">
+                                   <input type="number" class="form-control" name="telefono" value="{{ $user->telefono}}" autofocus>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="celular" class="col-sm-2 col-form-label">Celular</label>
+                                <div class="col-sm-7">
+                                   <input type="number" class="form-control" name="celular" value="{{ $user->celular}}" autofocus>
                                 </div>
                             </div>
                             <div class="row">
@@ -35,6 +65,18 @@
                                 <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
                                 <div class="col-sm-7">
                                    <input type="password" class="form-control" name="password" placeholder="Ingrese la contraseña solo en caso de modificarla" >
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="direccion" class="col-sm-2 col-form-label">Dirección Residencia</label>
+                                <div class="col-sm-7">
+                                   <input type="text" class="form-control" name="direccion" value="{{ $user->direccion}}" autofocus>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="fechanacimiento" class="col-sm-2 col-form-label">Fecha Nacimiento</label>
+                                <div class="col-sm-7">
+                                   <input type="date" class="form-control" name="fechanacimiento" value="{{ $user->fechanacimiento}}" autofocus>
                                 </div>
                             </div>
                             <div class="row">

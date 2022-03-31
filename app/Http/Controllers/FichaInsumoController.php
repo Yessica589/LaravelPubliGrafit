@@ -22,7 +22,7 @@ class FichaInsumoController extends Controller
         }
         
         $productoterminados = DB::select('SELECT ft.id, idproducto, precio, ft.estado, pt.nombreproducto, ft.created_at FROM ficha_tecnicas as ft JOIN producto_terminados as pt WHERE ft.idproducto = pt.id');
-        return view("fichainsumo.index", compact("productoterminados", "insumos", ));
+        return view("fichainsumo.index", compact("productoterminados", "insumos" ));
     }
 
     public function showInsumo($id)

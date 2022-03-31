@@ -68,9 +68,10 @@ Route::get(uri: '/fichainsumo/{fichainsumo}/showInsumo', action:  [App\Http\Cont
 // Route::post(uri: '/fichainsumo', action:  [App\Http\Controllers\FichaInsumoController::class, 'listar'])->name( name: 'fichainsumo.store');
 
 
-
 Route::get(uri: '/ventaproducto', action:  [App\Http\Controllers\VentaProductoController::class, 'index'])->name( name: 'ventaproducto.index');
+Route::get(uri: '/ventaproducto/create', action:  [App\Http\Controllers\VentaProductoController::class, 'create'])->name( name: 'ventaproducto.create');
 Route::post(uri: '/ventaproducto', action:  [App\Http\Controllers\VentaProductoController::class, 'store'])->name( name: 'ventaproducto.store');
+Route::get(uri: '/ventaproducto/{ventaproducto}/showProducto', action:  [App\Http\Controllers\VentaProductoController::class, 'showProducto'])->name( name: 'ventaproducto.showProducto');
 
 
 Route::get(uri: '/comprainsumo', action:  [App\Http\Controllers\CompraInsumoController::class, 'index'])->name( name: 'comprainsumo.index');

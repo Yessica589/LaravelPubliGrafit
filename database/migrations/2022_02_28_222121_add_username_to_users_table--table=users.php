@@ -17,6 +17,34 @@ return new class extends Migration
             $table->string('username')->unique();
         });
 
+        Schema::table(table:'users', callback:function(Blueprint $table ){
+            $table->string('apellido');
+        });
+
+        Schema::table(table:'users', callback:function(Blueprint $table ){
+            $table->string('tipodocumento');
+        });
+
+        Schema::table(table:'users', callback:function(Blueprint $table ){
+            $table->string('ndocumento')->unique();
+        });
+
+        Schema::table(table:'users', callback:function(Blueprint $table ){
+            $table->string('telefono')->unique();
+        });
+
+        Schema::table(table:'users', callback:function(Blueprint $table ){
+            $table->string('celular')->unique();
+        });
+
+        Schema::table(table:'users', callback:function(Blueprint $table ){
+            $table->string('direccion')->unique();
+        });
+
+        Schema::table(table:'users', callback:function(Blueprint $table ){
+            $table->string('fechanacimiento');
+        });
+
     }
 
     /**
