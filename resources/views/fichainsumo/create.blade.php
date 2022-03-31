@@ -14,7 +14,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-head">
-                                        <h4 class="text-center text-primary">Crear Ficha <a href="{{ route('fichainsumo.index')}}">Listar</a></h4>                                      
+                                        <h4 class="text-center text-primary">Crear Ficha</h4>                                      
                                     </div>
                                     <form
                                     action="{{ route('fichainsumo.store') }}"
